@@ -50,7 +50,7 @@ const isAuthenticated: () => Promise<boolean> = ZaloKit.isAuthenticated;
 
 const getUserProfile: () => Promise<IUserProfile> = ZaloKit.getUserProfile;
 
-const getApplicationHashKey = (): string => {
+const getApplicationHashKey = (): Promise<string> => {
   if (Platform.OS === 'android') {
     return ZaloKit.getApplicationHashKey();
   }

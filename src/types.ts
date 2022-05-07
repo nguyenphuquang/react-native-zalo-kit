@@ -9,9 +9,11 @@ export enum Constants {
 }
 
 export interface IZaloAuthResponse {
-  oauthCode: string;
-  userId: string;
-  socialId: string;
+  //oauthCode: string;
+  //userId: string;
+  //socialId: string;
+  accessToken: string
+  refreshToken: string
 }
 
 export interface IUserProfile {
