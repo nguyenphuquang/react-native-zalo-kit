@@ -24,7 +24,7 @@ const ZaloKit = NativeModules.ZaloKit
       }
     );
 
-const login = async (
+const login = (
   authType = Constants.AUTH_VIA_APP_OR_WEB
 ): Promise<IZaloAuthResponse> => {
   const AUTH_TYPES = [
@@ -58,28 +58,28 @@ const getApplicationHashKey = (): string => {
   throw new Error('This function is only supported on Android');
 };
 
-const getUserFriendList = async (
+const getUserFriendList = (
   offset: number,
   count: number
 ): Promise<IFriendList> => ZaloKit.getUserFriendList(offset, count);
 
-const getUserInvitableFriendList = async (
+const getUserInvitableFriendList = (
   offset: number,
   count: number
 ): Promise<IFriendList> => ZaloKit.getUserInvitableFriendList(offset, count);
 
-const postFeed = async (
+const postFeed = (
   message: string,
   link: string
 ): Promise<{ id: string }> => ZaloKit.postFeed(message, link);
 
-const sendMessage = async (
+const sendMessage = (
   friendId: string,
   link: string,
   message: string
 ): Promise<{ to: string }> => ZaloKit.sendMessage(friendId, message, link);
 
-const inviteFriendUseApp = async (
+const inviteFriendUseApp = (
   friendIds: string[],
   message: string
 ): Promise<{ to: string[] }> => {
@@ -89,7 +89,7 @@ const inviteFriendUseApp = async (
   return ZaloKit.inviteFriendUseApp(friendIds.join(','), message);
 };
 
-const sendMessageByApp = async (feedData: {
+const sendMessageByApp = (feedData: {
   appName: string;
   message: string;
   link: string;
@@ -100,7 +100,7 @@ const sendMessageByApp = async (feedData: {
   others: object;
 }): Promise<IShareResponseObject> => ZaloKit.sendMessageByApp(feedData);
 
-const postFeedByApp = async (feedData: {
+const postFeedByApp = (feedData: {
   appName: string;
   message: string;
   link: string;
